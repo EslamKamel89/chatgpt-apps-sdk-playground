@@ -1,15 +1,22 @@
 from fastmcp import FastMCP
 
-mcp = FastMCP()
+mcp = FastMCP("MCP Sandbox")
 
 
-@mcp.tool()
+@mcp.tool
 def add(a: int, b: int) -> int:
     """
-    Add two numbers
+    Add two numbers.
     """
     return a + b
 
 
-if __name__ == "__main__":
-    mcp.run(transport="http", port=8123)
+@mcp.tool
+def subtract(a: int, b: int) -> int:
+    """
+    Subtract two numbers.
+    """
+    return a - b
+
+
+mcp_app = mcp.http_app(path="/")
