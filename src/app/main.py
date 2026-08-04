@@ -1,8 +1,11 @@
+import io
 from contextlib import asynccontextmanager
 
+import pyautogui
 from fastapi import FastAPI
 from fastmcp.utilities.lifespan import combine_lifespans
 
+from mcp.server.fastmcp.utilities.types import Image
 from src.mcp import mcp_app
 
 
