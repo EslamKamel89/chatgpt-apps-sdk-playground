@@ -6,6 +6,9 @@ class Settings(BaseSettings):
     mcp_resource_url: str
     scalekit_authorization_server: str
     mcp_resource_metadata_url: str
+    scalekit_environment_url: str
+    scalekit_client_id: str
+    scalekit_client_secret: str
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
